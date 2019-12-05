@@ -8,6 +8,8 @@ Repositório do projeto desenvolvido para 2VA da disciplina Tópicos em Otimiza�
 * [Dependências](https://github.com/peticormei/projeto-sertao#dependências)
 * [Como funciona o projeto](https://github.com/peticormei/projeto-sertao/blob/master/example/ProjetoSertao.ipynb)
 * [Como iniciar o projeto](https://github.com/peticormei/projeto-sertao#como-iniciar-o-projeto)
+* [Entradas do projeto](https://github.com/peticormei/projeto-sertao#entradas-do-projeto)
+* [Autores](https://github.com/peticormei/projeto-sertao#autores)
 <!--te-->
 
 ### Dependências
@@ -21,3 +23,14 @@ Utilize o comando abaixo para instalar os pacotes necessários para rodar o proj
 ### Como iniciar o projeto
 
     python run.py
+
+### Entradas do projeto
+
+Os argumentos de entrada do projeto pode ser alteradas adicionando ou removendo novas informações nos arquivos em formato CSV localizados na pasta de [inputs](https://github.com/peticormei/projeto-sertao/tree/master/inputs).
+
+A estrutura desses arquivos devem ser respeitadas, não sendo permitido mudança no tamanho do cabeçalho, mudança dos nomes do cabeçalho ou dos nomes arquivos.
+
+### Autores
+
+[Filipe Mei](https://github.com/peticormei)
+[Manoel Freitas](https://github.com/manoelfneto)
