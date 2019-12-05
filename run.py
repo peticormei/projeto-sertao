@@ -1,3 +1,5 @@
+import os
+
 from pulp import *
 
 
@@ -17,10 +19,12 @@ def extract_data_from_csv(path):
 
     return data
 
-atividades = extract_data_from_csv('src/atividades.csv')
-terreno = extract_data_from_csv('src/terreno.csv')
-producao = extract_data_from_csv('src/producao.csv')
 
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+atividades = extract_data_from_csv(os.path.join(current_dir, 'inputs/atividades.csv'))
+terreno = extract_data_from_csv(os.path.join(current_dir, 'inputs/terreno.csv'))
+producao = extract_data_from_csv(os.path.join(current_dir, 'inputs/producao.csv'))
 
 problem = LpProblem('ProjetoSertao', LpMaximize)
 
@@ -38,14 +42,14 @@ qtd_lucro_terreno = { f'{t}_{a}': valor_venda_atividade[a] - custo_prep_terreno[
 
 tipo_producao = [f'{t}_{a}' for a in tipo_atividade for t in tipo_terreno]
 
-atividades_vars = LpVariable.dicts("atividades", tipo_producao, lowBound=0)
+atividades_vars = LpVariable.dicts('atividades', tipo_producao, lowBound=0)
 
-problem += lpSum([atividades_vars[tp] * qtd_lucro_terreno[tp] * qtd_prod_terreno[tp] for tp in tipo_producao]), "Funcao objetivo"
+problem += lpSum([atividades_vars[tp] * qtd_lucro_terreno[tp] * qtd_prod_terreno[tp] for tp in tipo_producao]), 'Funcao objetivo'
 
 
 
 qtd_hectare_terreno = { t: int(terreno[t]['hectare']) for t in tipo_terreno }
-qtd_contrato_atividade = { a: int(atividades[a]['contrato']) for a in tipo_atividade }
+qtd_contrato_atividade = { a: int(atividades[a]['qtd_contrato']) for a in tipo_atividade }
 
 
 for t in tipo_terreno:
@@ -54,14 +58,27 @@ for t in tipo_terreno:
 for a in tipo_atividade:
     problem += lpSum([qtd_prod_terreno[tp] * atividades_vars[tp] for tp in tipo_producao if a in tp]) >= qtd_contrato_atividade[a]
 
+print('\n')
+print(problem)
 
 problem.solve()
 
 
+solution = {
+    1: 'Ótima',
+    0: "Não resolvido",
+    -1: 'Inviável',
+    -2: 'Não vinculado',
+    -3: 'Indefinido'
+}
 
-print("Status:", LpStatus[problem.status])
 
+print('\nSolução:')
+print(solution[problem.status])
+
+print('\nDistribuição (Produção/ha):')
 for v in problem.variables():
-    print(v.name, "=", v.varValue)
+    print(f'{v.name}:', f'{v.varValue}ha')
 
-print("Total = ", value(problem.objective))
+print('\nLucro total:')
+print('R$ {:.2f}'.format(value(problem.objective)))
