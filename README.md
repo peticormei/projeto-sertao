@@ -5,7 +5,9 @@ Repositório do projeto desenvolvido para 2VA da disciplina Tópicos em Otimiza�
 ### Tabela de Conteúdos:
 
 [Dependências](https://github.com/peticormei/projeto-sertao#dependências)
+
 [Como funciona o projeto](https://github.com/peticormei/projeto-sertao/blob/master/example/notebook.ipynb)
+
 [Como iniciar o projeto](https://github.com/peticormei/projeto-sertao#como-iniciar-o-projeto)
 
 ### Dependências
