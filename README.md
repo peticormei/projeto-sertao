@@ -33,4 +33,5 @@ A estrutura desses arquivos devem ser respeitadas, não sendo permitido mudança
 ### Autores
 
 [Filipe Mei](https://github.com/peticormei)
+
 [Manoel Freitas](https://github.com/manoelfneto)
