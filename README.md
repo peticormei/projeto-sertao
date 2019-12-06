@@ -1,6 +1,6 @@
 # Projeto Sertão
 
-Repositório do projeto desenvolvido para 2VA da disciplina Tópicos em Otimização 2019.2 do Bacharelado em Sistemas de Informação da UFRPE.
+Repositório do projeto desenvolvido para 2VA da disciplina Tópicos em Otimização 2019.2 do curso Bacharelado em Sistemas de Informação da UFRPE.
 
 ### Tabela de Conteúdos:
 
