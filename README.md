@@ -6,6 +6,7 @@ Repositório do projeto desenvolvido para 2VA da disciplina Tópicos em Otimiza�
 
 <!--ts-->
 * [Dependências](https://github.com/peticormei/projeto-sertao#dependências)
+* [Documentação do projeto](https://github.com/peticormei/projeto-sertao/blob/master/ProjetoSertao.pdf)
 * [Como funciona o projeto](https://github.com/peticormei/projeto-sertao/blob/master/example/ProjetoSertao.ipynb)
 * [Como iniciar o projeto](https://github.com/peticormei/projeto-sertao#como-iniciar-o-projeto)
 * [Entradas do projeto](https://github.com/peticormei/projeto-sertao#entradas-do-projeto)
